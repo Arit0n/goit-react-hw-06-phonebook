@@ -37,7 +37,6 @@ export const ContactForm = () => {
       alert(`${values.name} is already in contacts`);
     } else {
       const list = { id: nanoid(), ...values };
-      console.log(list);
       dispatch(updateContact(list));
     }
   };
@@ -51,7 +50,6 @@ export const ContactForm = () => {
         }}
         validationSchema={validSchema}
         onSubmit={(values, actions) => {
-          console.log(values, actions);
           updateContacts(values);
           actions.resetForm();
         }}
